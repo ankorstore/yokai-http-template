@@ -19,7 +19,7 @@ logs:
 	docker compose logs -f
 
 test:
-	go test -v -cover -count=1 -failfast ./...
+	go test -v -race -cover -count=1 -failfast ./...
 
 lint:
 	golangci-lint run -v
