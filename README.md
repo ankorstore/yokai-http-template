@@ -1,15 +1,23 @@
 # Yokai HTTP Template
 
-> Yokai HTTP application template.
+> HTTP application template based on the [Yokai](https://github.com/ankorstore/yokai) Go framework.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ankorstore/yokai/main/docs/images/yokai.png" width="350" height="350" />
+</p>
+
+## Table of contents
 
 <!-- TOC -->
 * [Overview](#overview)
 * [Documentation](#documentation)
-  * [Template usage](#template-usage)
+  * [Getting started](#getting-started)
+    * [Installation](#installation)
+      * [With gonew (recommended)](#with-gonew-recommended)
+      * [With GitHub](#with-github)
+    * [Usage](#usage)
   * [Template contents](#template-contents)
     * [Layout](#layout)
-    * [Modules](#modules)
-    * [Endpoints](#endpoints)
     * [Makefile](#makefile)
 <!-- TOC -->
 
@@ -17,38 +25,44 @@
 
 This template provides:
 
-- ready to extend [Fx](https://uber-go.github.io/fx/) application, with the [fxhttpserver](https://github.com/ankorstore/yokai/tree/main/fxhttpserver) module pre-configured to offer:
-  - http server
-  - automatic and correlated logs and traces
-  - automatic healthcheck, metrics and debug endpoints
-- ready to use [dev environment](docker-compose.yaml) based on [Air](https://github.com/cosmtrek/air) (live reloading)
-- examples of [handler](internal/handler/welcome.go), [service](internal/service/info.go) and [functional tests](internal/handler/welcome_test.go) to get started
+- a ready to extend [Yokai](https://github.com/ankorstore/yokai) application, with the [fxhttpserver](https://github.com/ankorstore/yokai/tree/main/fxhttpserver) module installed
+- a ready to use [dev environment](docker-compose.yaml), based on [Air](https://github.com/cosmtrek/air) (for live reloading)
+- some examples of [handler](internal/handler/welcome.go), [service](internal/service/welcome.go) and [tests](internal/handler/welcome_test.go) to get started
 
 ## Documentation
 
-Check the [Go Fx HTTP application tutorial](https://go-fx-doc.ankorstore.io/tutorials/http-app/) to learn how to use this template to build HTTP applications.
+See the [Yokai documentation](https://github.com/ankorstore/yokai) for more details.
 
-### Template usage
+### Getting started
 
-First, create your repository by [using this template](https://github.com/new?owner=ankorstore&template_name=go-fx-http-app-template&template_owner=ankorstore).
+#### Installation
 
-Then, in your repository (for example `ankorstore/your-repo`) root directory:
+##### With gonew (recommended)
 
-- create the `.env` file from `.env.example`:
-  ```shell
-  cp .env.example .env
-  ```
-- adapt the `.env` file with your [GitHub access token](https://github.com/settings/tokens) in the `GH_ACCESS_TOKEN` variable
-- rename the go.mod and imports with:
-  ```shell
-  make rename to=ankorstore/your-repo
-  ```
-- start the application:
-  ```shell
-  make up
-  ```
+You can install [gonew](https://go.dev/blog/gonew), and simply run:
 
-You can now access your application on [http://localhost:8080](http://localhost:8080).
+```shell
+gonew github.com/ankorstore/yokai-http-template github.com/foo/bar
+cd bar
+make fresh
+```
+
+##### With GitHub
+
+You can also create your repository [using the GitHub template](https://github.com/new?owner=ankorstore&template_name=yokai-http-template).
+
+After cloning your repository, simply run:
+
+```shell
+make rename to=foo/bar
+make fresh
+```
+
+#### Usage
+
+After a short moment, the application will be available on:
+- [http://localhost:8080](http://localhost:8080) for the application
+- [http://localhost:8081](http://localhost:8081) for the dashboard
 
 ### Template contents
 
@@ -64,32 +78,6 @@ This template is following the [standard go project layout](https://github.com/g
   - `bootstrap.go`: bootstrap (modules, lifecycles, etc)
   - `routing.go`: routing
   - `services.go`: dependency injection
-
-#### Modules
-
-This template comes with the following modules preloaded and configured:
-
-- [fxbootstrap](https://github.com/ankorstore/yokai/tree/main/fxbootstrap) module, preloading:
-  - [fxconfig](https://github.com/ankorstore/yokai/tree/main/fxconfig) module
-  - [fxlog](https://github.com/ankorstore/yokai/tree/main/fxlog) module
-  - [fxtrace](https://github.com/ankorstore/yokai/tree/main/fxtrace) module
-  - [fxhealthcheck](https://github.com/ankorstore/yokai/tree/main/fxhealthcheck) module
-- [fxgenerate](https://github.com/ankorstore/yokai/tree/main/fxgenerate) module
-- [fxhttpserver](https://github.com/ankorstore/yokai/tree/main/fxhttpserver) module
-
-#### Endpoints
-
-The example [WelcomeHandler](internal/handler/welcome.go) and the pre-configured [fxhttpserver](https://github.com/ankorstore/yokai/tree/main/fxhttpserver) module offer out of the box the following endpoints:
-
-| Endpoint                                                    | Description                                                               |
-|-------------------------------------------------------------|---------------------------------------------------------------------------|
-| [GET /](http://localhost:8080)                              | [WelcomeHandler](internal/handler/welcome.go) example endpoint            |
-| [GET /_health](http://localhost:8080/_health)               | Health check endpoint (enabled if `modules.http.server.healthcheck=true`) |
-| [GET /_metrics](http://localhost:8080/_metrics)             | Metrics endpoint (enabled if `modules.http.server.metrics=true`)          |
-| [GET /_debug/config](http://localhost:8080/_debug/config)   | Debug config endpoint (enabled if `app.debug=true`)                       |
-| [GET /_debug/routes](http://localhost:8080/_debug/routes)   | Debug routes endpoint (enabled if `app.debug=true`)                       |
-| [GET /_debug/version](http://localhost:8080/_debug/version) | Debug version endpoint (enabled if `app.debug=true`)                      |
-| [GET /_pprof/index](http://localhost:8080/_pprof/index)     | Pprof index dashboard endpoint (enabled if `app.pprof=true`)              |
 
 #### Makefile
 
