@@ -4,8 +4,9 @@ go 1.20
 
 require (
 	github.com/ankorstore/yokai/config v1.1.0
-	github.com/ankorstore/yokai/fxcore v1.0.0
+	github.com/ankorstore/yokai/fxcore v1.1.0
 	github.com/ankorstore/yokai/fxhttpserver v1.0.0
+	github.com/ankorstore/yokai/httpserver v1.0.0
 	github.com/ankorstore/yokai/log v1.0.0
 	github.com/ankorstore/yokai/trace v1.0.0
 	github.com/labstack/echo/v4 v4.11.1
@@ -23,7 +24,6 @@ require (
 	github.com/ankorstore/yokai/fxtrace v1.1.0 // indirect
 	github.com/ankorstore/yokai/generate v1.0.0 // indirect
 	github.com/ankorstore/yokai/healthcheck v1.0.0 // indirect
-	github.com/ankorstore/yokai/httpserver v1.0.0 // indirect
 	github.com/arl/statsviz v0.6.0 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/cenkalti/backoff/v4 v4.2.1 // indirect
