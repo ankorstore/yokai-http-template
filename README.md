@@ -25,9 +25,9 @@ This template provides:
 - a ready to use [dev environment](docker-compose.yaml), based on [Air](https://github.com/cosmtrek/air) (for live reloading)
 - some examples of [handler](internal/handler/welcome.go), [service](internal/service/welcome.go) and [tests](internal/handler/welcome_test.go) to get started
 
-## Getting started
-
 See the [Yokai documentation](https://ankorstore.github.io/yokai) for more details.
+
+## Getting started
 
 ### Installation
 
