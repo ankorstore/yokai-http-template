@@ -5,12 +5,6 @@
 
 > HTTP application template based on the [Yokai](https://github.com/ankorstore/yokai) Go framework.
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/ankorstore/yokai/main/docs/images/yokai.png" width="350" height="350" />
-</p>
-
-## Table of contents
-
 <!-- TOC -->
 * [Overview](#overview)
 * [Documentation](#documentation)
