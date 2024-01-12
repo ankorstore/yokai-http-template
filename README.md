@@ -7,15 +7,14 @@
 
 <!-- TOC -->
 * [Overview](#overview)
-* [Documentation](#documentation)
-  * [Getting started](#getting-started)
-    * [Installation](#installation)
-      * [With gonew (recommended)](#with-gonew-recommended)
-      * [With GitHub](#with-github)
-    * [Usage](#usage)
-  * [Template contents](#template-contents)
-    * [Layout](#layout)
-    * [Makefile](#makefile)
+* [Getting started](#getting-started)
+  * [Installation](#installation)
+    * [With gonew](#with-gonew)
+    * [With GitHub](#with-github)
+  * [Usage](#usage)
+* [Template contents](#template-contents)
+  * [Layout](#layout)
+  * [Makefile](#makefile)
 <!-- TOC -->
 
 ## Overview
@@ -26,15 +25,13 @@ This template provides:
 - a ready to use [dev environment](docker-compose.yaml), based on [Air](https://github.com/cosmtrek/air) (for live reloading)
 - some examples of [handler](internal/handler/welcome.go), [service](internal/service/welcome.go) and [tests](internal/handler/welcome_test.go) to get started
 
-## Documentation
+## Getting started
 
-See the [Yokai documentation](https://github.com/ankorstore/yokai) for more details.
+See the [Yokai documentation](https://ankorstore.github.io/yokai) for more details.
 
-### Getting started
+### Installation
 
-#### Installation
-
-##### With gonew (recommended)
+#### With gonew
 
 You can install [gonew](https://go.dev/blog/gonew), and simply run:
 
@@ -44,7 +41,7 @@ cd bar
 make fresh
 ```
 
-##### With GitHub
+#### With GitHub
 
 You can also create your repository [using the GitHub template](https://github.com/new?owner=ankorstore&template_name=yokai-http-template).
 
@@ -55,15 +52,15 @@ make rename to=foo/bar
 make fresh
 ```
 
-#### Usage
+### Usage
 
 After a short moment, the application will be available on:
 - [http://localhost:8080](http://localhost:8080) for the application
 - [http://localhost:8081](http://localhost:8081) for the dashboard
 
-### Template contents
+## Template contents
 
-#### Layout
+### Layout
 
 This template is following the [standard go project layout](https://github.com/golang-standards/project-layout):
 
@@ -76,7 +73,7 @@ This template is following the [standard go project layout](https://github.com/g
   - `routing.go`: routing
   - `services.go`: dependency injection
 
-#### Makefile
+### Makefile
 
 This template provides a `Makefile`:
 
