@@ -3,6 +3,9 @@ app:
 modules:
   core:
     server:
+      metrics:
+        collect:
+          enabled: false
       debug:
         pprof:
           expose: false
