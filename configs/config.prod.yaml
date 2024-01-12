@@ -1,0 +1,13 @@
+app:
+  debug: false
+modules:
+  core:
+    server:
+      debug:
+        pprof:
+          expose: false
+        stats:
+          expose: false
+  log:
+    level: info
+    output: stdout
