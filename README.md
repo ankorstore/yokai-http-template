@@ -43,9 +43,9 @@ make fresh
 
 #### With GitHub
 
-You can also create your repository [using the GitHub template](https://github.com/new?owner=ankorstore&template_name=yokai-http-template).
+You can also create your repository [using the GitHub template](https://github.com/new?template_name=yokai-http-template&template_owner=ankorstore).
 
-After cloning your repository, simply run:
+After cloning and going into your repository, simply run:
 
 ```shell
 make rename to=foo/bar
@@ -56,7 +56,7 @@ make fresh
 
 After a short moment, the application will be available on:
 - [http://localhost:8080](http://localhost:8080) for the application
-- [http://localhost:8081](http://localhost:8081) for the dashboard
+- [http://localhost:8081](http://localhost:8081) for the core dashboard
 
 ## Template contents
 
