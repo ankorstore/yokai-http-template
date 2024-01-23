@@ -6,22 +6,24 @@ on:
       - main
 
 jobs:
-  rename-project:
+  rename:
     if: ${{ github.repository	!= 'ankorstore/yokai-http-template' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
           ref: ${{ github.head_ref }}
 
-      - name: Rename the project
+      - name: Rename
         run: |
           make rename to=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}' | tr '[:upper:]' '[:lower:]')
-          rm .github/workflows/post-install.yaml
+          rm .github/workflows/rename.yml
 
-      - uses: stefanzweifel/git-auto-commit-action@v5
+      - name: Commit
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Post installation steps"
+          commit_message: "Post installation operations"
           tagging_message: 'v0.1.0'
           push_options: --force
