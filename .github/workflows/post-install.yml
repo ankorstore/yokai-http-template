@@ -20,7 +20,7 @@ jobs:
 
       - name: Rename
         run: |
-          make rename to=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}' | tr '[:upper:]' '[:lower:]')
+          make rename to=$(echo '${{ github.repository }}' | tr '[:upper:]' '[:lower:]')
           rm .github/workflows/post-install.yml
 
       - name: Commit
