@@ -6,9 +6,11 @@ on:
       - main
 
 jobs:
-  rename:
+  post_install:
     if: ${{ github.repository	!= 'ankorstore/yokai-http-template' }}
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -19,7 +21,7 @@ jobs:
       - name: Rename
         run: |
           make rename to=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}' | tr '[:upper:]' '[:lower:]')
-          rm .github/workflows/rename.yml
+          rm .github/workflows/post-install.yml
 
       - name: Commit
         uses: stefanzweifel/git-auto-commit-action@v5
