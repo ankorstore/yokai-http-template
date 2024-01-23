@@ -1,0 +1,27 @@
+name: Post install
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  rename-project:
+    if: ${{ github.repository	!= 'ankorstore/yokai-http-template' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.head_ref }}
+
+      - name: Rename the project
+        run: |
+          make rename to=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}' | tr '[:upper:]' '[:lower:]')
+          rm .github/workflows/post-install.yaml
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Post installation steps"
+          tagging_message: 'v0.1.0'
+          push_options: --force
