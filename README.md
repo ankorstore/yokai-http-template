@@ -45,10 +45,11 @@ make fresh
 
 You can also create your repository [using the GitHub template](https://github.com/new?template_name=yokai-http-template&template_owner=ankorstore).
 
-After cloning and going into your repository, simply run:
+It will automatically rename your project resources and push them, this operation can take a few minutes.
+
+Once ready, after cloning and going into your repository, simply run:
 
 ```shell
-make rename to=foo/bar
 make fresh
 ```
 
