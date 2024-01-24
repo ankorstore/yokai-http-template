@@ -24,7 +24,7 @@ This template provides:
 
 - a ready to extend [Yokai](https://github.com/ankorstore/yokai) application, with the [fxhttpserver](https://github.com/ankorstore/yokai/tree/main/fxhttpserver) module installed
 - a ready to use [dev environment](docker-compose.yaml), based on [Air](https://github.com/cosmtrek/air) (for live reloading)
-- some examples of [handler](internal/handler/welcome.go), [service](internal/service/welcome.go) and [tests](internal/handler/welcome_test.go) to get started
+- some examples of [handler](internal/handler/example.go) and [test](internal/handler/example_test.go) to get started
 
 ## Documentation
 
