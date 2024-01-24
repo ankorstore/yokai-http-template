@@ -66,7 +66,7 @@ Once ready, the application will be available on:
 
 ### Layout
 
-This template is following the [standard go project layout](https://github.com/golang-standards/project-layout):
+This template is following the [standard Go project layout](https://github.com/golang-standards/project-layout):
 
 - `cmd/`: entry points
 - `configs/`: configuration files
