@@ -1,4 +1,4 @@
-module github.com/ankorstore/yokai-worker-template
+module github.com/ankorstore/yokai-http-template
 
 go 1.20
 
