@@ -59,7 +59,7 @@ make fresh
 ### Usage
 
 Once ready, the application will be available on:
-- [http://localhost:8080](http://localhost:8080) for the application http server
+- [http://localhost:8080](http://localhost:8080) for the application HTTP server
 - [http://localhost:8081](http://localhost:8081) for the application core dashboard
 
 ## Contents
