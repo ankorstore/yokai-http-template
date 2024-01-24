@@ -1,12 +1,10 @@
 package internal
 
 import (
-	"github.com/ankorstore/yokai-http-template/internal/service"
 	"go.uber.org/fx"
 )
 
+// ProvideServices is used to register the application services.
 func ProvideServices() fx.Option {
-	return fx.Provide(
-		service.NewWelcomeService,
-	)
+	return fx.Options()
 }

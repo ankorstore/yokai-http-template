@@ -7,12 +7,13 @@
 
 <!-- TOC -->
 * [Overview](#overview)
+* [Documentation](#documentation)
 * [Getting started](#getting-started)
   * [Installation](#installation)
-    * [With gonew](#with-gonew)
     * [With GitHub](#with-github)
+    * [With gonew](#with-gonew)
   * [Usage](#usage)
-* [Template contents](#template-contents)
+* [Contents](#contents)
   * [Layout](#layout)
   * [Makefile](#makefile)
 <!-- TOC -->
@@ -25,21 +26,13 @@ This template provides:
 - a ready to use [dev environment](docker-compose.yaml), based on [Air](https://github.com/cosmtrek/air) (for live reloading)
 - some examples of [handler](internal/handler/welcome.go), [service](internal/service/welcome.go) and [tests](internal/handler/welcome_test.go) to get started
 
-See the [Yokai documentation](https://ankorstore.github.io/yokai) for more details.
+## Documentation
+
+See [Yokai documentation](https://ankorstore.github.io/yokai).
 
 ## Getting started
 
 ### Installation
-
-#### With gonew
-
-You can install [gonew](https://go.dev/blog/gonew), and simply run:
-
-```shell
-gonew github.com/ankorstore/yokai-http-template github.com/foo/bar
-cd bar
-make fresh
-```
 
 #### With GitHub
 
@@ -53,13 +46,23 @@ Once ready, after cloning and going into your repository, simply run:
 make fresh
 ```
 
+#### With gonew
+
+You can install [gonew](https://go.dev/blog/gonew), and simply run:
+
+```shell
+gonew github.com/ankorstore/yokai-worker-template github.com/foo/bar
+cd bar
+make fresh
+```
+
 ### Usage
 
-After a short moment, the application will be available on:
-- [http://localhost:8080](http://localhost:8080) for the application
-- [http://localhost:8081](http://localhost:8081) for the core dashboard
+Once ready, the application will be available on:
+- [http://localhost:8080](http://localhost:8080) for the application http server
+- [http://localhost:8081](http://localhost:8081) for the application core dashboard
 
-## Template contents
+## Contents
 
 ### Layout
 
@@ -68,15 +71,14 @@ This template is following the [standard go project layout](https://github.com/g
 - `cmd/`: entry points
 - `configs/`: configuration files
 - `internal/`:
-  - `handler/`: HTTP handler and test examples
-  - `service/`: service and test examples
+  - `handler/`: handler and test examples
   - `bootstrap.go`: bootstrap (modules, lifecycles, etc)
   - `routing.go`: routing
   - `services.go`: dependency injection
 
 ### Makefile
 
-This template provides a `Makefile`:
+This template provides a [Makefile](Makefile):
 
 ```
 make up     # start the docker compose stack

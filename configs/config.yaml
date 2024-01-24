@@ -38,7 +38,8 @@ modules:
         collect:
           enabled: true
   log:
-    level: debug
+    level: info
+    output: stdout
   trace:
     processor:
       type: noop

@@ -2,9 +2,5 @@ app:
   debug: true
 modules:
   log:
+    level: debug
     output: console
-  trace:
-    processor:
-      type: stdout
-      options:
-        pretty: true
