@@ -8,10 +8,10 @@ require (
 	github.com/ankorstore/yokai/fxhttpserver v1.1.0
 	github.com/ankorstore/yokai/log v1.1.0
 	github.com/ankorstore/yokai/trace v1.1.0
-	github.com/labstack/echo/v4 v4.11.1
+	github.com/labstack/echo/v4 v4.11.4
 	github.com/prometheus/client_golang v1.19.0
-	github.com/spf13/cobra v1.7.0
-	github.com/stretchr/testify v1.8.4
+	github.com/spf13/cobra v1.8.0
+	github.com/stretchr/testify v1.9.0
 	go.opentelemetry.io/otel v1.17.0
 	go.uber.org/fx v1.20.1
 )
