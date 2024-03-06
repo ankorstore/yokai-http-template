@@ -60,7 +60,7 @@ func TestExampleHandler(t *testing.T) {
 	expectedMetric := `
 		# HELP http_app_httpserver_requests_total Number of processed HTTP requests
 		# TYPE http_app_httpserver_requests_total counter
-		http_app_httpserver_requests_total{handler="/",method="GET",status="200"} 1
+		http_app_httpserver_requests_total{method="GET",path="/",status="2xx"} 1
 	`
 
 	err := testutil.GatherAndCompare(
