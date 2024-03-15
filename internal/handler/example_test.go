@@ -58,15 +58,15 @@ func TestExampleHandler(t *testing.T) {
 
 	// metrics assertion
 	expectedMetric := `
-		# HELP http_app_httpserver_requests_total Number of processed HTTP requests
-		# TYPE http_app_httpserver_requests_total counter
-		http_app_httpserver_requests_total{method="GET",path="/",status="2xx"} 1
+		# HELP http_server_requests_total Number of processed HTTP requests
+		# TYPE http_server_requests_total counter
+		http_server_requests_total{method="GET",path="/",status="2xx"} 1
 	`
 
 	err := testutil.GatherAndCompare(
 		metricsRegistry,
 		strings.NewReader(expectedMetric),
-		"http_app_httpserver_requests_total",
+		"http_server_requests_total",
 	)
 	assert.NoError(t, err)
 }
