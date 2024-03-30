@@ -36,7 +36,7 @@ This template is following the [recommended project layout](https://go.dev/doc/m
 - `cmd/`: entry points
 - `configs/`: configuration files
 - `internal/`:
-  - `handler/`: handler and test examples
+  - `handler/`: HTTP handler and test examples
   - `bootstrap.go`: bootstrap
   - `register.go`: dependencies registration
   - `router.go`: routing registration
