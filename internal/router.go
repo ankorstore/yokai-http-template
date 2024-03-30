@@ -6,8 +6,8 @@ import (
 	"go.uber.org/fx"
 )
 
-// ProvideRouting is used to register the application HTTP handlers.
-func ProvideRouting() fx.Option {
+// Router is used to register the application HTTP middlewares and handlers.
+func Router() fx.Option {
 	return fx.Options(
 		fxhttpserver.AsHandler("GET", "", handler.NewExampleHandler),
 	)
